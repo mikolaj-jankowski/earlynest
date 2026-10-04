@@ -60,6 +60,16 @@ Aplikacja może być używana na całym świecie, więc wielojęzyczność dotyc
   - Powiązanie opiekun–dziecko to osobny byt z własnymi danymi: rodzaj relacji (np. rodzic, dziadek, opiekun prawny, inna osoba), status (oczekujący, zatwierdzony, odrzucony, wygasły/odebrany), daty od–do oraz uprawnienia (np. odbieranie dziecka, otrzymywanie powiadomień, zgłaszanie nieobecności).
   - **Placówka zatwierdza nowego opiekuna.** Nowy opiekun nie widzi danych dziecka, dopóki placówka go nie zatwierdzi. Placówka może też odebrać dostęp (np. po zmianie opieki prawnej).
   - Wszystkie zmiany opiekunów są zapisywane (kto, kiedy, kto zatwierdził) jako ślad audytowy.
+- **Uprawnienia i role (ustalone):**
+  - **Każda operacja wymaga odpowiedniego uprawnienia.** Backend sprawdza uprawnienie przy każdej operacji (odczyt, zapis, zatwierdzanie, usuwanie itd.); interfejs tylko ukrywa niedostępne akcje.
+  - **Rola = nazwany zestaw uprawnień.** Użytkownik dostaje uprawnienia wyłącznie przez role, a nie pojedynczo.
+  - **Role nadawane w kontekście placówki** (lub organizacji): ta sama osoba może mieć różne role w różnych placówkach.
+  - **Role podstawowe (wbudowane, domyślne):** opiekun, podopieczny, dyrektor. Każda placówka dostaje je od razu z sensownym zestawem uprawnień.
+  - **Role własne:** każda placówka może tworzyć własne role i dobierać ich uprawnienia (np. nauczyciel, sekretariat, pielęgniarka, wolontariusz), a także modyfikować uprawnienia ról podstawowych w granicach dozwolonych przez system.
+  - Role są definiowane **per placówka**; właściciel organizacji może nadawać role ponad placówkami. Uprawnienia systemowe, których placówka nie może nadać (np. dostęp do danych innej placówki), są zawsze poza jej kontrolą.
+  - Zmiany ról i uprawnień trafiają do śladu audytowego (kto, komu, kiedy, co zmienił).
+  - **Do doprecyzowania:** rola „opiekun" oznacza tu opiekuna dziecka (rodzic, opiekun prawny, dziadek itd.), czyli osobę z konta rodzica. Personel to osobne role (np. nauczyciel/wychowawca), a nie „opiekun". Nazewnictwo trzeba ustalić tak, by nie mylić tych dwóch znaczeń (np. „opiekun dziecka" vs „wychowawca").
+  - **Podopieczny** to dziecko jako podmiot, któremu coś się dzieje w systemie (obecność, grupa). Zwykle nie ma własnego konta; opiekunowie działają w jego imieniu.
 - Panel webowy zostaje dla zadań zarządczych (konfiguracja placówki, użytkownicy, raporty); szczegółowy podział funkcji mobilne vs web do ustalenia.
 - Jeden wspólny backend dla aplikacji mobilnej i panelu webowego.
 - Ułatwia to też ASO i SEO: jeden zlokalizowany wpis w sklepie, jedna marka, jeden zestaw linków do aplikacji.
@@ -122,7 +132,10 @@ Google Search Console, Bing Webmaster Tools, Lighthouse / Core Web Vitals.
 - [ ] Nazwa domeny i struktura subdomen.
 - [ ] Stack aplikacji mobilnej i panelu webowego (nieustalony; priorytet: prostota, jedna kodowa baza mobilna, np. rozwiązanie cross-platform).
 - [ ] Które funkcje personelu są dostępne w aplikacji mobilnej, a które tylko w panelu webowym.
-- [ ] Jakie role i uprawnienia (np. rodzic, opiekun/nauczyciel, administrator placówki, właściciel organizacji z wieloma placówkami).
+- [ ] Dokładna lista uprawnień (katalog operacji) i domyślne zestawy dla ról podstawowych: opiekun, podopieczny, dyrektor (oraz właściciel organizacji i personel).
+- [ ] Nazewnictwo ról: jak odróżnić „opiekuna dziecka" (rodzic, dziadek, opiekun prawny) od personelu opiekującego się dziećmi w placówce (np. wychowawca).
+- [ ] Czy podopieczny (dziecko) może mieć własne konto/dostęp (np. starsze dzieci) i z jakimi uprawnieniami, czy zawsze działają za nie opiekunowie.
+- [ ] Granice własnych ról placówki: które uprawnienia placówka może nadawać, a które są zastrzeżone dla systemu (np. dostęp do danych innej placówki).
 - [ ] Proces dodawania opiekuna: kto go inicjuje (istniejący opiekun zaprasza, nowy opiekun prosi o dostęp przez placówkę, placówka dodaje sama), jak placówka weryfikuje tożsamość i prawo do opieki (np. dokument, kontakt osobisty, tylko decyzja personelu) oraz czy w aplikacji przechowujemy dokumenty.
 - [ ] Czy istniejący opiekunowie są informowani o dodaniu nowego opiekuna i czy mogą się sprzeciwić.
 - [ ] Spory o opiekę (np. rozwód): jak placówka ogranicza dostęp wybranemu opiekunowi.
