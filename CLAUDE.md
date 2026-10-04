@@ -33,6 +33,16 @@ Aplikacja może być używana na całym świecie, więc wielojęzyczność dotyc
 - Prawo: RODO (UE) to minimum; inne rynki mają własne przepisy o danych dzieci (np. COPPA w USA). Sprawdzić przed wejściem na rynek.
 - Sklepy z aplikacjami: pełna lokalizacja w każdym wspieranym języku (patrz ASO niżej).
 
+## Wymóg: prosta architektura, jedna aplikacja dla wszystkich
+
+- **Jedna aplikacja mobilna** (jedna na iOS, jedna na Android) dla wszystkich rodziców, placówek i krajów. Jeden wpis w każdym sklepie, jeden build.
+- **Bez wersji white-label** i bez osobnych aplikacji per placówka, per kraj czy per język.
+- Przynależność do placówki to **dane, a nie osobna aplikacja**: rodzic dołącza do placówki przez link, kod QR lub kod zaproszenia (patrz „Wyszukiwanie lokalne") i jedna aplikacja pokazuje jej dane. Jeden rodzic może mieć wiele dzieci i wiele placówek.
+- Język, region i terminologia to ustawienia konfiguracji/danych, a nie osobne wersje kodu.
+- Zasada: **najprostsze rozwiązanie, które działa**. Każda dodatkowa warstwa, usługa lub wariant aplikacji wymaga uzasadnienia. Nie budujemy na zapas.
+- Jeden wspólny backend dla aplikacji mobilnej i panelu webowego.
+- Ułatwia to też ASO i SEO: jeden zlokalizowany wpis w sklepie, jedna marka, jeden zestaw linków do aplikacji.
+
 ## Cel: łatwa wyszukiwalność w przeglądarce, w wielu językach
 
 Aplikacja i panel za logowaniem nie są indeksowane przez wyszukiwarki, więc potrzebna jest publiczna warstwa oraz optymalizacja w sklepach z aplikacjami.
@@ -89,7 +99,8 @@ Google Search Console, Bing Webmaster Tools, Lighthouse / Core Web Vitals.
 - [ ] Czy wiadomości między placówką a rodzicem mają być automatycznie tłumaczone.
 - [ ] Które rynki poza UE obsługujemy i jakie mają wymogi prawne dot. danych dzieci.
 - [ ] Nazwa domeny i struktura subdomen.
-- [ ] Stack aplikacji mobilnej i panelu webowego (nieustalony).
+- [ ] Stack aplikacji mobilnej i panelu webowego (nieustalony; priorytet: prostota, jedna kodowa baza mobilna, np. rozwiązanie cross-platform).
+- [ ] Czy personel placówki też korzysta z aplikacji mobilnej (np. do szybkich zadań), czy wyłącznie z panelu webowego.
 - [ ] Model biznesowy / cennik.
 
 ## Zasady współpracy
