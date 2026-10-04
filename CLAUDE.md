@@ -51,9 +51,15 @@ Aplikacja może być używana na całym świecie, więc wielojęzyczność dotyc
 - **Łatwe przełączanie kontekstu w aplikacji (kluczowy wymóg UX):**
   - Rodzic może mieć **wiele dzieci w jednej placówce** (nie zawsze w tej samej grupie) oraz **dzieci w różnych placówkach**.
   - Aplikacja musi pozwalać jednym ruchem przełączyć się między dzieckiem i placówką (np. selektor na górze ekranu), bez wylogowania i bez osobnych kont.
-  - Warto rozważyć też widok zbiorczy „wszystkie dzieci" (np. powiadomienia i nieobecności ze wszystkich placówek w jednym miejscu), obok widoku pojedynczego dziecka.
+  - Oprócz widoku pojedynczego dziecka jest widok zbiorczy „wszystkie dzieci" (patrz niżej).
   - Powiadomienia mają jasno wskazywać, którego dziecka i której placówki dotyczą.
   - Ten sam mechanizm dotyczy personelu pracującego w kilku placówkach oraz właściciela z wieloma placówkami (przełączanie placówki lub widok zbiorczy całej organizacji).
+- **Widok zbiorczy (ustalone):** rodzic i właściciel organizacji mają widok zbiorczy, np. wszystkie nieobecności ze wszystkich dzieci/placówek w jednym miejscu, obok przełączania na pojedyncze dziecko lub placówkę.
+- **Historia dziecka (ustalone):** dziecko może zmieniać grupę, a nawet placówkę. Zapisujemy historię przynależności (placówka, grupa, daty od–do), a nie nadpisujemy danych. Dziecko zmieniające placówkę nie traci powiązań z opiekunami, ale dane z poprzedniej placówki pozostają w niej (granice dostępu do ustalenia, patrz RODO).
+- **Opiekunowie (ustalone):** liczba opiekunów jednego dziecka jest **dowolna, bez limitu**. Model ma być generyczny: opiekunem może być rodzic, dziadek, opiekun prawny itd., także zamiast rodziców lub razem z nimi.
+  - Powiązanie opiekun–dziecko to osobny byt z własnymi danymi: rodzaj relacji (np. rodzic, dziadek, opiekun prawny, inna osoba), status (oczekujący, zatwierdzony, odrzucony, wygasły/odebrany), daty od–do oraz uprawnienia (np. odbieranie dziecka, otrzymywanie powiadomień, zgłaszanie nieobecności).
+  - **Placówka zatwierdza nowego opiekuna.** Nowy opiekun nie widzi danych dziecka, dopóki placówka go nie zatwierdzi. Placówka może też odebrać dostęp (np. po zmianie opieki prawnej).
+  - Wszystkie zmiany opiekunów są zapisywane (kto, kiedy, kto zatwierdził) jako ślad audytowy.
 - Panel webowy zostaje dla zadań zarządczych (konfiguracja placówki, użytkownicy, raporty); szczegółowy podział funkcji mobilne vs web do ustalenia.
 - Jeden wspólny backend dla aplikacji mobilnej i panelu webowego.
 - Ułatwia to też ASO i SEO: jeden zlokalizowany wpis w sklepie, jedna marka, jeden zestaw linków do aplikacji.
@@ -117,8 +123,11 @@ Google Search Console, Bing Webmaster Tools, Lighthouse / Core Web Vitals.
 - [ ] Stack aplikacji mobilnej i panelu webowego (nieustalony; priorytet: prostota, jedna kodowa baza mobilna, np. rozwiązanie cross-platform).
 - [ ] Które funkcje personelu są dostępne w aplikacji mobilnej, a które tylko w panelu webowym.
 - [ ] Jakie role i uprawnienia (np. rodzic, opiekun/nauczyciel, administrator placówki, właściciel organizacji z wieloma placówkami).
-- [ ] Czy dziecko może należeć do kilku grup lub zmieniać placówkę (historia), oraz ilu opiekunów może mieć jedno dziecko i jak wygląda ich zatwierdzanie przez placówkę.
-- [ ] Widok zbiorczy: czy rodzic i właściciel mają widok „wszystko w jednym miejscu", czy tylko przełączanie.
+- [ ] Proces dodawania opiekuna: kto go inicjuje (istniejący opiekun zaprasza, nowy opiekun prosi o dostęp przez placówkę, placówka dodaje sama), jak placówka weryfikuje tożsamość i prawo do opieki (np. dokument, kontakt osobisty, tylko decyzja personelu) oraz czy w aplikacji przechowujemy dokumenty.
+- [ ] Czy istniejący opiekunowie są informowani o dodaniu nowego opiekuna i czy mogą się sprzeciwić.
+- [ ] Spory o opiekę (np. rozwód): jak placówka ogranicza dostęp wybranemu opiekunowi.
+- [ ] Czy dziecko może być jednocześnie w kilku placówkach (np. dwa żłobki w różne dni), czy zawsze w jednej naraz.
+- [ ] Zasady retencji i dostępu do danych po zmianie placówki lub zakończeniu opieki (RODO).
 - [ ] Model biznesowy / cennik.
 
 ## Zasady współpracy
