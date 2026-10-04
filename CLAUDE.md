@@ -19,6 +19,20 @@ Język rozmowy z właścicielem: polski.
 - Repozytorium jest na razie puste (brak kodu).
 - Etap obecny: ustalanie wiedzy i strategii. **Nic nie kodujemy, dopóki właściciel o to nie poprosi.**
 
+## Wymóg: produkt globalny i wielojęzyczny
+
+Aplikacja może być używana na całym świecie, więc wielojęzyczność dotyczy **całego produktu**, a nie tylko strony:
+
+- **Aplikacja mobilna (iOS/Android)** i **panel webowy** od początku budowane z i18n: żadnych tekstów na sztywno w kodzie, wszystkie w plikach tłumaczeń.
+- Architektura ma wspierać **dowolną liczbę języków**; dodanie języka = dodanie plików tłumaczeń, bez zmian w kodzie.
+- Język użytkownika wybierany z ustawień telefonu/przeglądarki, z możliwością ręcznej zmiany w aplikacji.
+- **Placówka i rodzic mogą mieć różne języki**; wiadomości i powiadomienia powinny być tłumaczone lub dostarczane w języku odbiorcy (do ustalenia, czy tłumaczenie maszynowe).
+- Wsparcie dla pisma **od prawej do lewej (RTL)**, np. arabski, hebrajski – układ interfejsu musi to uwzględniać.
+- Lokalne formaty: daty, godziny, liczby, waluty, strefy czasowe, pierwszy dzień tygodnia, formaty imion i adresów.
+- Terminologia: żłobek/przedszkole/szkółka mają inne znaczenie i wiek dzieci w różnych krajach – słownik pojęć per kraj.
+- Prawo: RODO (UE) to minimum; inne rynki mają własne przepisy o danych dzieci (np. COPPA w USA). Sprawdzić przed wejściem na rynek.
+- Sklepy z aplikacjami: pełna lokalizacja w każdym wspieranym języku (patrz ASO niżej).
+
 ## Cel: łatwa wyszukiwalność w przeglądarce, w wielu językach
 
 Aplikacja i panel za logowaniem nie są indeksowane przez wyszukiwarki, więc potrzebna jest publiczna warstwa oraz optymalizacja w sklepach z aplikacjami.
@@ -34,7 +48,7 @@ Aplikacja i panel za logowaniem nie są indeksowane przez wyszukiwarki, więc po
 - Osobny URL dla każdego języka (`/pl/`, `/en/`, …), nie przełączanie cookie/`Accept-Language`.
 - Wzajemne tagi `hreflang` + `x-default`, `<html lang>`, przetłumaczone `title` i `meta description`, własny `canonical` dla każdej wersji.
 - Sitemap z wariantami językowymi, `robots.txt`.
-- Start od 1–2 języków (PL + EN); kolejne dodawać świadomie (koszt utrzymania treści).
+- Strona i aplikacja mają obsługiwać dowolną liczbę języków (patrz „Wymóg: produkt globalny"). Kolejność wdrażania języków jest decyzją biznesową: proponowany start PL + EN, potem kolejne według rynków; tłumaczenia treści strony kosztują czas, więc dodawać je świadomie.
 - Bez automatycznego przekierowania po IP; zamiast tego baner z propozycją zmiany języka.
 - Słowa kluczowe badać osobno dla każdego języka (żłobek/przedszkole nie mają prostych odpowiedników: daycare, nursery, preschool, Kita, Kindergarten).
 
@@ -70,7 +84,10 @@ Google Search Console, Bing Webmaster Tools, Lighthouse / Core Web Vitals.
 ## Otwarte decyzje
 
 - [ ] Framework strony marketingowej: Astro (lekki, świetny pod SEO) vs Next.js (wspólny kod, jeśli panel też w React).
-- [ ] Jakie języki na start i na jakie rynki.
+- [ ] Jakie języki na start i na jakie rynki (architektura i tak ma być na dowolną liczbę).
+- [ ] Narzędzie/proces tłumaczeń (np. platforma do zarządzania tłumaczeniami, tłumaczenie ludzkie vs maszynowe).
+- [ ] Czy wiadomości między placówką a rodzicem mają być automatycznie tłumaczone.
+- [ ] Które rynki poza UE obsługujemy i jakie mają wymogi prawne dot. danych dzieci.
 - [ ] Nazwa domeny i struktura subdomen.
 - [ ] Stack aplikacji mobilnej i panelu webowego (nieustalony).
 - [ ] Model biznesowy / cennik.
