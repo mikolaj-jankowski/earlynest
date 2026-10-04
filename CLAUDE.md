@@ -42,6 +42,18 @@ Aplikacja może być używana na całym świecie, więc wielojęzyczność dotyc
 - Zasada: **najprostsze rozwiązanie, które działa**. Każda dodatkowa warstwa, usługa lub wariant aplikacji wymaga uzasadnienia. Nie budujemy na zapas.
 - **Personel placówki także korzysta z aplikacji mobilnej** (obok panelu webowego). Czyli ta sama aplikacja obsługuje rodziców i personel.
 - **Role zamiast osobnych aplikacji:** jedno konto użytkownika może mieć różne role w różnych placówkach (np. rodzic w jednej, opiekun w innej). Aplikacja pokazuje widok i funkcje zależnie od roli i placówki. Uprawnienia egzekwuje backend, a nie tylko interfejs.
+- **Model pojęć (do doprecyzowania przy projektowaniu danych):**
+  - **Użytkownik** (konto): rodzic, personel lub właściciel; jedno konto, wiele ról.
+  - **Dziecko**: może być powiązane z wieloma opiekunami (np. dwoje rodziców) i należeć do jednej placówki oraz jednej grupy.
+  - **Placówka**: żłobek/przedszkole, ma grupy.
+  - **Grupa**: w obrębie placówki; rodzeństwo w tej samej placówce może być w różnych grupach.
+  - **Organizacja/właściciel**: placówki komercyjne mogą należeć do jednego właściciela, który ma **wiele placówek** i zarządza nimi z jednego konta.
+- **Łatwe przełączanie kontekstu w aplikacji (kluczowy wymóg UX):**
+  - Rodzic może mieć **wiele dzieci w jednej placówce** (nie zawsze w tej samej grupie) oraz **dzieci w różnych placówkach**.
+  - Aplikacja musi pozwalać jednym ruchem przełączyć się między dzieckiem i placówką (np. selektor na górze ekranu), bez wylogowania i bez osobnych kont.
+  - Warto rozważyć też widok zbiorczy „wszystkie dzieci" (np. powiadomienia i nieobecności ze wszystkich placówek w jednym miejscu), obok widoku pojedynczego dziecka.
+  - Powiadomienia mają jasno wskazywać, którego dziecka i której placówki dotyczą.
+  - Ten sam mechanizm dotyczy personelu pracującego w kilku placówkach oraz właściciela z wieloma placówkami (przełączanie placówki lub widok zbiorczy całej organizacji).
 - Panel webowy zostaje dla zadań zarządczych (konfiguracja placówki, użytkownicy, raporty); szczegółowy podział funkcji mobilne vs web do ustalenia.
 - Jeden wspólny backend dla aplikacji mobilnej i panelu webowego.
 - Ułatwia to też ASO i SEO: jeden zlokalizowany wpis w sklepie, jedna marka, jeden zestaw linków do aplikacji.
@@ -104,7 +116,9 @@ Google Search Console, Bing Webmaster Tools, Lighthouse / Core Web Vitals.
 - [ ] Nazwa domeny i struktura subdomen.
 - [ ] Stack aplikacji mobilnej i panelu webowego (nieustalony; priorytet: prostota, jedna kodowa baza mobilna, np. rozwiązanie cross-platform).
 - [ ] Które funkcje personelu są dostępne w aplikacji mobilnej, a które tylko w panelu webowym.
-- [ ] Jakie role i uprawnienia (np. rodzic, opiekun/nauczyciel, administrator placówki).
+- [ ] Jakie role i uprawnienia (np. rodzic, opiekun/nauczyciel, administrator placówki, właściciel organizacji z wieloma placówkami).
+- [ ] Czy dziecko może należeć do kilku grup lub zmieniać placówkę (historia), oraz ilu opiekunów może mieć jedno dziecko i jak wygląda ich zatwierdzanie przez placówkę.
+- [ ] Widok zbiorczy: czy rodzic i właściciel mają widok „wszystko w jednym miejscu", czy tylko przełączanie.
 - [ ] Model biznesowy / cennik.
 
 ## Zasady współpracy
