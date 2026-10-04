@@ -124,6 +124,7 @@ Google Search Console, Bing Webmaster Tools, Lighthouse / Core Web Vitals.
 
 ## Otwarte decyzje
 
+- [ ] **Model uprawnień: pierwszy element architektury** (patrz „Lista architektoniczna"). Pytania o role, uprawnienia i opiekunów poniżej rozstrzygamy w jego ramach.
 - [ ] Lista architektoniczna od właściciela (patrz sekcja wyżej); od niej zależą wszystkie decyzje techniczne poniżej.
 - [ ] Framework strony marketingowej: Astro (lekki, świetny pod SEO) vs Next.js (wspólny kod, jeśli panel też w React). Rozstrzygnie lista architektoniczna.
 - [ ] Jakie języki na start i na jakie rynki (architektura i tak ma być na dowolną liczbę).
@@ -145,6 +146,13 @@ Google Search Console, Bing Webmaster Tools, Lighthouse / Core Web Vitals.
 - [ ] Model biznesowy / cennik.
 
 ## Lista architektoniczna (źródło decyzji technicznych)
+
+**Kolejność (ustalone):**
+
+1. **Najpierw modelujemy model uprawnień** (uprawnienia, role, kontekst placówki/organizacji, powiązania opiekun–dziecko, ślad audytowy). To pierwszy element architektury i podstawa dla pozostałych; kolejne elementy listy projektujemy dopiero po nim, uwzględniając jego wynik.
+2. Kolejne elementy: według listy dostarczonej przez właściciela (poniżej).
+
+**Lista od właściciela:**
 
 - Projekt realizujemy **zgodnie z listą rzeczy architektonicznych**, którą dostarczy właściciel (jeszcze nie została dostarczona).
 - Gdy lista się pojawi, zostanie dopisana w tej sekcji (lub zlinkowana do osobnego pliku, np. `docs/architecture.md`) i **ma pierwszeństwo** przy wyborze stacku, struktury i rozwiązań technicznych.
