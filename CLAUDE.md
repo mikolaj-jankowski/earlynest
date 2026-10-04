@@ -162,5 +162,5 @@ Google Search Console, Bing Webmaster Tools, Lighthouse / Core Web Vitals.
 ## Zasady współpracy
 
 - Nie pisz kodu bez wyraźnej prośby.
-- Ustalenia z rozmów dopisuj do tego pliku (sekcje wyżej, a nierozstrzygnięte rzeczy do „Otwarte decyzje").
+- **Nie edytuj tego pliku samodzielnie.** Zmiany w `CLAUDE.md` wprowadzaj wyłącznie na wyraźne polecenie właściciela. Ustalenia z rozmów same nie trafiają do pliku; jeśli coś wygląda na warte zapisania, zaproponuj to w odpowiedzi i poczekaj na polecenie.
 - Odpowiadaj po polsku, zwięźle.
