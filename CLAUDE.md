@@ -11,8 +11,8 @@ Język rozmowy z właścicielem: polski.
 
 ## Odbiorcy (dwie grupy, różne potrzeby)
 
-1. **Rodzice** – korzystają z aplikacji mobilnej. Szukają np. „aplikacja dla rodziców przedszkole", „jak zgłosić nieobecność dziecka w żłobku".
-2. **Placówki** – korzystają z panelu webowego. Szukają np. „system do zarządzania przedszkolem", „program dla żłobka", „komunikacja z rodzicami".
+1. **Rodzice** – korzystają z aplikacji mobilnej (tej samej, z której może korzystać personel). Szukają np. „aplikacja dla rodziców przedszkole", „jak zgłosić nieobecność dziecka w żłobku".
+2. **Placówki** – korzystają z panelu webowego, a ich personel także z aplikacji mobilnej. Szukają np. „system do zarządzania przedszkolem", „program dla żłobka", „komunikacja z rodzicami".
 
 ## Aktualny stan
 
@@ -40,6 +40,9 @@ Aplikacja może być używana na całym świecie, więc wielojęzyczność dotyc
 - Przynależność do placówki to **dane, a nie osobna aplikacja**: rodzic dołącza do placówki przez link, kod QR lub kod zaproszenia (patrz „Wyszukiwanie lokalne") i jedna aplikacja pokazuje jej dane. Jeden rodzic może mieć wiele dzieci i wiele placówek.
 - Język, region i terminologia to ustawienia konfiguracji/danych, a nie osobne wersje kodu.
 - Zasada: **najprostsze rozwiązanie, które działa**. Każda dodatkowa warstwa, usługa lub wariant aplikacji wymaga uzasadnienia. Nie budujemy na zapas.
+- **Personel placówki także korzysta z aplikacji mobilnej** (obok panelu webowego). Czyli ta sama aplikacja obsługuje rodziców i personel.
+- **Role zamiast osobnych aplikacji:** jedno konto użytkownika może mieć różne role w różnych placówkach (np. rodzic w jednej, opiekun w innej). Aplikacja pokazuje widok i funkcje zależnie od roli i placówki. Uprawnienia egzekwuje backend, a nie tylko interfejs.
+- Panel webowy zostaje dla zadań zarządczych (konfiguracja placówki, użytkownicy, raporty); szczegółowy podział funkcji mobilne vs web do ustalenia.
 - Jeden wspólny backend dla aplikacji mobilnej i panelu webowego.
 - Ułatwia to też ASO i SEO: jeden zlokalizowany wpis w sklepie, jedna marka, jeden zestaw linków do aplikacji.
 
@@ -100,7 +103,8 @@ Google Search Console, Bing Webmaster Tools, Lighthouse / Core Web Vitals.
 - [ ] Które rynki poza UE obsługujemy i jakie mają wymogi prawne dot. danych dzieci.
 - [ ] Nazwa domeny i struktura subdomen.
 - [ ] Stack aplikacji mobilnej i panelu webowego (nieustalony; priorytet: prostota, jedna kodowa baza mobilna, np. rozwiązanie cross-platform).
-- [ ] Czy personel placówki też korzysta z aplikacji mobilnej (np. do szybkich zadań), czy wyłącznie z panelu webowego.
+- [ ] Które funkcje personelu są dostępne w aplikacji mobilnej, a które tylko w panelu webowym.
+- [ ] Jakie role i uprawnienia (np. rodzic, opiekun/nauczyciel, administrator placówki).
 - [ ] Model biznesowy / cennik.
 
 ## Zasady współpracy
