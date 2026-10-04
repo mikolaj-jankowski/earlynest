@@ -124,7 +124,8 @@ Google Search Console, Bing Webmaster Tools, Lighthouse / Core Web Vitals.
 
 ## Otwarte decyzje
 
-- [ ] Framework strony marketingowej: Astro (lekki, świetny pod SEO) vs Next.js (wspólny kod, jeśli panel też w React).
+- [ ] Lista architektoniczna od właściciela (patrz sekcja wyżej); od niej zależą wszystkie decyzje techniczne poniżej.
+- [ ] Framework strony marketingowej: Astro (lekki, świetny pod SEO) vs Next.js (wspólny kod, jeśli panel też w React). Rozstrzygnie lista architektoniczna.
 - [ ] Jakie języki na start i na jakie rynki (architektura i tak ma być na dowolną liczbę).
 - [ ] Narzędzie/proces tłumaczeń (np. platforma do zarządzania tłumaczeniami, tłumaczenie ludzkie vs maszynowe).
 - [ ] Czy wiadomości między placówką a rodzicem mają być automatycznie tłumaczone.
@@ -142,6 +143,13 @@ Google Search Console, Bing Webmaster Tools, Lighthouse / Core Web Vitals.
 - [ ] Czy dziecko może być jednocześnie w kilku placówkach (np. dwa żłobki w różne dni), czy zawsze w jednej naraz.
 - [ ] Zasady retencji i dostępu do danych po zmianie placówki lub zakończeniu opieki (RODO).
 - [ ] Model biznesowy / cennik.
+
+## Lista architektoniczna (źródło decyzji technicznych)
+
+- Projekt realizujemy **zgodnie z listą rzeczy architektonicznych**, którą dostarczy właściciel (jeszcze nie została dostarczona).
+- Gdy lista się pojawi, zostanie dopisana w tej sekcji (lub zlinkowana do osobnego pliku, np. `docs/architecture.md`) i **ma pierwszeństwo** przy wyborze stacku, struktury i rozwiązań technicznych.
+- Do tego czasu **nie podejmujemy decyzji architektonicznych ani technologicznych** (stack, baza danych, hosting, framework). Wszystko powyżej to wymagania produktowe i ograniczenia, a nie wybór technologii.
+- Jeśli wymagania z tego pliku kolidują z listą architektoniczną, zgłoś konflikt właścicielowi zamiast rozstrzygać samodzielnie.
 
 ## Zasady współpracy
 
